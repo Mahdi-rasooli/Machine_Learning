@@ -1,0 +1,151 @@
+# Repository structure and conventions
+
+This document records how the repository is organized and, more importantly, why.
+Every convention below was a deliberate decision, and each one has a cost that
+was weighed before it was adopted.
+
+---
+
+## One shape for every lesson
+
+```
+lessons/NN-lesson-name/
+├── README.md         What the lesson covers, the results, reflections
+├── notebook.ipynb    Derivation, code, and plots — the lesson itself
+├── data/             Dataset, if small and redistributable
+└── figures/          Plots exported for README.md
+```
+
+Uniformity is the point. A reader who understands how to navigate one lesson can
+navigate all of them, and adding a lesson becomes a mechanical act rather than a
+design decision made fifteen separate times.
+
+Lessons are numbered with a two-digit prefix (`01-`, `02-`) so that directory
+listings stay in course order rather than alphabetical order.
+
+**Lessons never depend on one another.** If lesson 09 needs a decision tree, it
+implements one or imports scikit-learn's — it does not reach into lesson 08.
+Self-contained lessons can be read and run in isolation, which is how anyone
+evaluating this repository will actually encounter them.
+
+---
+
+## Everything for a lesson lives in its notebook
+
+There are no `src/` modules and no helper packages. The mathematics, the NumPy
+implementation, the scikit-learn comparison, and the plots all sit in a single
+`notebook.ipynb`, in the order a reader would want to meet them.
+
+The usual argument for extracting code into modules is reuse and testability. It
+does not apply here: nothing is reused between lessons, and each implementation
+exists to be *read* alongside the derivation that motivates it. Splitting the
+gradient descent loop into a separate file would put the mathematics on one
+screen and the code implementing it on another, which defeats the purpose.
+
+The cost is real — notebooks produce noisier diffs than `.py` files, and there is
+no automated test suite. Both were accepted knowingly in exchange for lessons
+that read as a single continuous argument.
+
+---
+
+## README and notebook divide the work
+
+The notebook is the working artifact: full derivation, every cell, every
+experiment, including the ones that did not pan out.
+
+The lesson README is the summary: what the lesson covers, the mathematics in
+condensed form, the dataset, the final numbers, and what was learned. It is
+written for someone browsing GitHub who has thirty seconds, not thirty minutes.
+
+Some overlap between the two is intended. The README is not an index of the
+notebook — it is a shorter answer to the same question.
+
+---
+
+## Why every algorithm is implemented twice
+
+Each notebook contains a from-scratch NumPy implementation and, further down, the
+scikit-learn equivalent applied to the same data.
+
+Using a library proves familiarity with an API. Deriving the cost function,
+differentiating it, implementing the optimizer, and reproducing the library's
+answer proves understanding of the method. The second is the claim this
+repository exists to support.
+
+The comparison table makes the claim checkable rather than asserted: the
+from-scratch implementation is not merely present, it lands on the same numbers
+as a reference implementation that is known to be correct.
+
+The from-scratch code depends on NumPy alone. scikit-learn is a reference oracle,
+never the implementation on display.
+
+---
+
+## Notebook outputs are committed
+
+Standard practice is to strip notebook outputs before committing, because stored
+outputs produce large, noisy diffs.
+
+This repository does the opposite, deliberately. Its primary audience reads it in
+a browser on GitHub and will not clone it, install dependencies, and execute
+cells. If outputs are stripped, that reader sees code and no results — no
+regression line, no loss curve, no confusion matrix. Since the notebook *is* the
+lesson here, stripping outputs would empty out the lesson.
+
+Practically: never run "Clear All Outputs" before committing.
+
+---
+
+## Data policy
+
+Small, redistributable datasets are committed under `lessons/NN-*/data/` so each
+lesson runs immediately after cloning.
+
+Anything large, or restrictively licensed, is not committed. Those lessons state
+in their README where the data comes from and how to obtain it, and the file is
+listed in `.gitignore`. A reader must never be blocked by a missing file with no
+explanation of where it came from.
+
+---
+
+## Everything is written in English
+
+The audience for this repository includes people who do not share my first
+language. Writing in English is what makes the work legible to them.
+
+---
+
+## Mathematics is written out
+
+Each lesson states the model, its cost function, and the update rule in LaTeX,
+which GitHub renders natively in both notebooks and Markdown. Linking to a
+lecture video instead would delegate the explanation to someone else; the ability
+to state the mathematics plainly is part of what is being demonstrated.
+
+---
+
+## Every lesson records what went wrong
+
+Both the notebook and the README end with a section for pitfalls — the bug that
+took an afternoon, the misread formula, the learning rate that diverged.
+
+Work with no visible difficulty reads as work that was copied. An honest record
+of being stuck, and of getting unstuck, is the clearest evidence that the
+learning actually happened.
+
+---
+
+## Starting a new lesson
+
+Copy the template and rename it:
+
+```bash
+cp -r lessons/_template lessons/04-logistic-regression
+```
+
+Fill in the notebook, then condense it into the README. Put the dataset in
+`data/`, and make sure the final plot is saved into `figures/` so the README can
+display it.
+
+Finally, update the roadmap table in the root `README.md` — the roadmap is only
+useful while it is accurate.

@@ -1,0 +1,61 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ---- Environments ----
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ---- Testing / coverage ----
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+# NOTE: notebook *outputs* are intentionally committed so plots and results
+# render on GitHub without anyone needing to run the code.
+# See docs/repo-structure.md for the reasoning.
+
+# ---- IDE / editors ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Data ----
+# Small, redistributable datasets ARE committed under lessons/*/data/.
+# Anything large or license-restricted must be fetched by a download script.
+*.zip
+*.tar.gz
+*.7z
+*.parquet
+*.h5
+*.hdf5
+*.sqlite
+*.db
+
+# ---- Model artifacts ----
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+checkpoints/

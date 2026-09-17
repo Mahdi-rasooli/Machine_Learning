@@ -1,0 +1,12 @@
+# Core scientific stack
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+seaborn>=0.13
+
+# Reference implementations, used to check the from-scratch code
+scikit-learn>=1.4
+
+# Notebooks
+jupyter>=1.0
+notebook>=7.0

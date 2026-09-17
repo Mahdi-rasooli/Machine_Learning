@@ -1,0 +1,4 @@
+# Place this lesson's dataset here.
+#
+# Commit it only if it is small and redistributable. Otherwise add a
+# download_data.py script and list the data file in .gitignore.
