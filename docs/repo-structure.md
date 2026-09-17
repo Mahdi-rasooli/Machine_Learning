@@ -32,15 +32,15 @@ evaluating this repository will actually encounter them.
 
 ## Everything for a lesson lives in its notebook
 
-There are no `src/` modules and no helper packages. The mathematics, the NumPy
-implementation, the scikit-learn comparison, and the plots all sit in a single
-`notebook.ipynb`, in the order a reader would want to meet them.
+There are no `src/` modules and no helper packages. The mathematics, the data
+preparation, the model, and the plots all sit in a single `notebook.ipynb`, in
+the order a reader would want to meet them.
 
 The usual argument for extracting code into modules is reuse and testability. It
-does not apply here: nothing is reused between lessons, and each implementation
-exists to be *read* alongside the derivation that motivates it. Splitting the
-gradient descent loop into a separate file would put the mathematics on one
-screen and the code implementing it on another, which defeats the purpose.
+does not apply here: nothing is reused between lessons, and each piece of code
+exists to be *read* alongside the explanation that motivates it. Moving the
+model-fitting code into a separate file would put the mathematics on one screen
+and the code applying it on another, which defeats the purpose.
 
 The cost is real — notebooks produce noisier diffs than `.py` files, and there is
 no automated test suite. Both were accepted knowingly in exchange for lessons
@@ -62,22 +62,21 @@ notebook — it is a shorter answer to the same question.
 
 ---
 
-## Why every algorithm is implemented twice
+## The mathematics comes before the library call
 
-Each notebook contains a from-scratch NumPy implementation and, further down, the
-scikit-learn equivalent applied to the same data.
+Each notebook states the model and its cost function before any estimator is
+constructed. By the time `fit()` appears, the reader already knows what quantity
+is being minimised and why the result takes the form it does.
 
-Using a library proves familiarity with an API. Deriving the cost function,
-differentiating it, implementing the optimizer, and reproducing the library's
-answer proves understanding of the method. The second is the claim this
-repository exists to support.
+Using a library proves familiarity with an API. Being able to say what the
+library is computing, why that computation has the properties it has, and what
+its output means for the data at hand is the claim this repository exists to
+support.
 
-The comparison table makes the claim checkable rather than asserted: the
-from-scratch implementation is not merely present, it lands on the same numbers
-as a reference implementation that is known to be correct.
-
-The from-scratch code depends on NumPy alone. scikit-learn is a reference oracle,
-never the implementation on display.
+This is also why no lesson ends at a metric. A number without an interpretation
+demonstrates that code ran, not that anything was understood, so every lesson
+closes by saying where its model breaks down and what that implies about the
+problem.
 
 ---
 
@@ -124,14 +123,14 @@ to state the mathematics plainly is part of what is being demonstrated.
 
 ---
 
-## Every lesson records what went wrong
+## Every lesson credits its sources
 
-Both the notebook and the README end with a section for pitfalls — the bug that
-took an afternoon, the misread formula, the learning rate that diverged.
+Each lesson ends with references: the course lesson it follows, where the
+dataset came from, and any documentation that was actually used.
 
-Work with no visible difficulty reads as work that was copied. An honest record
-of being stuck, and of getting unstuck, is the clearest evidence that the
-learning actually happened.
+Lessons based on a course are not presented as though they were invented here.
+Saying plainly what was followed and what was worked out is what makes the rest
+of the write-up trustworthy.
 
 ---
 

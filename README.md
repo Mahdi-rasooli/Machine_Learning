@@ -1,8 +1,8 @@
-# Machine Learning — From Scratch and In Practice
+# Machine Learning — A Course, Worked Through
 
 A working notebook of my machine learning education. For every topic I study, I
-write up the theory, implement the algorithm from scratch with NumPy, then check
-my implementation against scikit-learn to prove it is correct.
+write up the mathematics behind it, apply it to a real dataset, and measure how
+well it does on data it has never seen.
 
 This repository is built in public, lesson by lesson, as I progress through my
 course. It is not a collection of copied tutorials — each lesson is written in my
@@ -11,23 +11,26 @@ of what I got wrong before I got it right.
 
 ---
 
-## Why implement it twice?
+## Why the mathematics comes first
 
 Calling `sklearn.linear_model.LinearRegression()` proves that I can read
-documentation. Deriving the cost function, differentiating it, implementing
-gradient descent, and then watching my coefficients converge to the same values
-scikit-learn produces proves that I understand what the library is doing.
+documentation. Being able to state what that call minimises, why the answer is
+exact rather than approximate, and what the resulting numbers do and do not mean
+is a different thing — and it is the thing this repository is a record of.
 
-Every lesson therefore works through the same idea twice:
+So every lesson follows the same order:
 
-| Component | Purpose |
+| Step | Purpose |
 |---|---|
-| My NumPy implementation | Demonstrates the mathematics |
-| scikit-learn, in the same notebook | Establishes ground truth |
-| The comparison table | Shows that the two agree |
+| The problem and the intuition | What is being asked, in plain language |
+| The mathematics | The model and the cost function, written out |
+| The data | What was chosen, what was discarded, and why |
+| The model | The library call, now unsurprising |
+| The results | Measured on held-out data, then interpreted |
 
-If my numbers and the library's numbers disagree, mine are wrong — and the
-notebook says so.
+The last step matters most. A metric printed without interpretation says
+nothing; every lesson ends by saying where its model fails and what that
+failure implies.
 
 ---
 
@@ -61,7 +64,7 @@ nothing is marked complete until both the notebook and the write-up are finished
 
 | # | Lesson | Status |
 |---|---|---|
-| 01 | Simple Linear Regression | 🚧 In progress |
+| 01 | [Simple Linear Regression](lessons/01-simple-linear-regression/) | ✅ Complete |
 | 02 | Multiple Linear Regression | ⬜ Planned |
 | 03 | Polynomial Regression and Regularization (Ridge, Lasso) | ⬜ Planned |
 | 04 | Logistic Regression | ⬜ Planned |
@@ -114,8 +117,11 @@ its outputs intact.
   across the repository.
 - **Notebook outputs are committed**, so every plot and result is visible on
   GitHub without running a single cell.
-- **Implementations depend only on NumPy.** scikit-learn appears solely as a
-  correctness reference.
+- **Every model is evaluated on held-out data**, never on the rows it was
+  fitted to.
+- **Every result is interpreted**, including where the model fails.
+- **Randomness is seeded**, so the numbers in the write-up are the numbers you
+  get when you run it.
 - **Each lesson is self-contained.** No lesson depends on another.
 - **Mathematics is written out**, not linked away to a video.
 
