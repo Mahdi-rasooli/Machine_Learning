@@ -4,8 +4,11 @@ pandas>=2.1
 matplotlib>=3.8
 seaborn>=0.13
 
-# Reference implementations, used to check the from-scratch code
+# Models, metrics and preprocessing
 scikit-learn>=1.4
+
+# Non-linear curve fitting (lesson 04)
+scipy>=1.11
 
 # Notebooks
 jupyter>=1.0

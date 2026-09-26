@@ -5,9 +5,9 @@ write up the mathematics behind it, apply it to a real dataset, and measure how
 well it does on data it has never seen.
 
 This repository is built in public, lesson by lesson, as I progress through my
-course. It is not a collection of copied tutorials — each lesson is written in my
-own words, with my own implementation, my own experiments, and an honest record
-of what I got wrong before I got it right.
+course. Each lesson states the mathematics in my own words, applies it to real
+data, and reports what the model can and cannot do — including the experiments
+that did not improve anything.
 
 ---
 
@@ -46,8 +46,8 @@ Machine_Learning/
 └── lessons/
     ├── _template/             Starting point for every new lesson
     └── NN-lesson-name/
-        ├── README.md          What the lesson covers, the results, reflections
-        ├── notebook.ipynb     Derivation, code, and plots — the lesson itself
+        ├── README.md          What the lesson covers, and the results
+        ├── notebook.ipynb     The reasoning, code, and plots — the lesson itself
         ├── data/              Dataset (small and redistributable only)
         └── figures/           Plots exported for the README
 ```
@@ -65,20 +65,22 @@ nothing is marked complete until both the notebook and the write-up are finished
 | # | Lesson | Status |
 |---|---|---|
 | 01 | [Simple Linear Regression](lessons/01-simple-linear-regression/) | ✅ Complete |
-| 02 | Multiple Linear Regression | ⬜ Planned |
-| 03 | Polynomial Regression and Regularization (Ridge, Lasso) | ⬜ Planned |
-| 04 | Logistic Regression | ⬜ Planned |
-| 05 | k-Nearest Neighbours | ⬜ Planned |
-| 06 | Naive Bayes | ⬜ Planned |
-| 07 | Support Vector Machines | ⬜ Planned |
-| 08 | Decision Trees | ⬜ Planned |
-| 09 | Ensemble Methods (Random Forest, Gradient Boosting) | ⬜ Planned |
-| 10 | Model Evaluation and Cross-Validation | ⬜ Planned |
-| 11 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
-| 12 | Clustering (k-Means, Hierarchical, DBSCAN) | ⬜ Planned |
-| 13 | Dimensionality Reduction (PCA) | ⬜ Planned |
-| 14 | Introduction to Neural Networks | ⬜ Planned |
-| 15 | Capstone: an end-to-end project | ⬜ Planned |
+| 02 | [Multiple Linear Regression](lessons/02-multiple-linear-regression/) | ✅ Complete |
+| 03 | [Polynomial Regression](lessons/03-polynomial-regression/) | ✅ Complete |
+| 04 | [Non-Linear Regression](lessons/04-non-linear-regression/) | ✅ Complete |
+| 05 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 06 | Logistic Regression | ⬜ Planned |
+| 07 | k-Nearest Neighbours | ⬜ Planned |
+| 08 | Naive Bayes | ⬜ Planned |
+| 09 | Support Vector Machines | ⬜ Planned |
+| 10 | Decision Trees | ⬜ Planned |
+| 11 | Ensemble Methods (Random Forest, Gradient Boosting) | ⬜ Planned |
+| 12 | Model Evaluation and Cross-Validation | ⬜ Planned |
+| 13 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
+| 14 | Clustering (k-Means, Hierarchical, DBSCAN) | ⬜ Planned |
+| 15 | Dimensionality Reduction (PCA) | ⬜ Planned |
+| 16 | Introduction to Neural Networks | ⬜ Planned |
+| 17 | Capstone: an end-to-end project | ⬜ Planned |
 
 Legend: ✅ Complete · 🚧 In progress · ⬜ Planned
 
@@ -117,8 +119,9 @@ its outputs intact.
   across the repository.
 - **Notebook outputs are committed**, so every plot and result is visible on
   GitHub without running a single cell.
-- **Every model is evaluated on held-out data**, never on the rows it was
-  fitted to.
+- **Every model is evaluated on held-out data** wherever the dataset allows it,
+  never on the rows it was fitted to. Where it does not — a short time series,
+  for instance — the lesson says so and explains why.
 - **Every result is interpreted**, including where the model fails.
 - **Randomness is seeded**, so the numbers in the write-up are the numbers you
   get when you run it.
@@ -133,7 +136,7 @@ The reasoning behind each of these is documented in
 ## Tech stack
 
 `Python` · `NumPy` · `pandas` · `Matplotlib` · `seaborn` · `scikit-learn` ·
-`Jupyter`
+`SciPy` · `Jupyter`
 
 ---
 
