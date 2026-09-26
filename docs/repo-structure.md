@@ -10,8 +10,8 @@ was weighed before it was adopted.
 
 ```
 lessons/NN-lesson-name/
-├── README.md         What the lesson covers, the results, reflections
-├── notebook.ipynb    Derivation, code, and plots — the lesson itself
+├── README.md         What the lesson covers, and the results
+├── notebook.ipynb    The reasoning, code, and plots — the lesson itself
 ├── data/             Dataset, if small and redistributable
 └── figures/          Plots exported for README.md
 ```
@@ -134,12 +134,40 @@ of the write-up trustworthy.
 
 ---
 
+## Lessons and projects are different things
+
+A **lesson** isolates one technique and asks what it can do. The dataset is
+chosen to make the method legible, and the write-up is about the method.
+
+A **project** in `projects/` starts from a question rather than a technique, and
+whatever it takes to answer it is fair game: cleaning a broken column,
+engineering features, comparing several models, tuning a hyperparameter,
+shipping something that makes predictions. The write-up is about the problem.
+
+Projects use the same folder shape as lessons — `README.md`, `notebook.ipynb`,
+`data/`, `figures/` — so nothing new has to be learned to read one. They are
+listed above the lesson roadmap in the root README because they show more.
+
+---
+
+## Material I did not write stays out
+
+Course handouts, instructor notes and any other text written by someone else are
+listed in `.gitignore` (`notes/`, `*.docx`) and never committed, even when they
+are useful and even when they describe my own work.
+
+Anything from them worth keeping gets rewritten in my own words and credited in
+that lesson's or project's references. A repository presented as my own work has
+to contain only my own work.
+
+---
+
 ## Starting a new lesson
 
 Copy the template and rename it:
 
 ```bash
-cp -r lessons/_template lessons/04-logistic-regression
+cp -r lessons/_template lessons/05-regularization
 ```
 
 Fill in the notebook, then condense it into the README. Put the dataset in

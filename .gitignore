@@ -59,3 +59,9 @@ desktop.ini
 *.pth
 *.onnx
 checkpoints/
+
+# Course handouts and other material I did not write myself. Kept locally for
+# reference, never published: anything from them that belongs in this repo gets
+# rewritten in my own words first.
+notes/
+*.docx

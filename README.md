@@ -43,17 +43,31 @@ Machine_Learning/
 ├── requirements.txt
 ├── docs/
 │   └── repo-structure.md      Conventions and the reasoning behind them
-└── lessons/
-    ├── _template/             Starting point for every new lesson
-    └── NN-lesson-name/
-        ├── README.md          What the lesson covers, and the results
-        ├── notebook.ipynb     The reasoning, code, and plots — the lesson itself
-        ├── data/              Dataset (small and redistributable only)
-        └── figures/           Plots exported for the README
+├── lessons/
+│   ├── _template/             Starting point for every new lesson
+│   └── NN-lesson-name/
+│       ├── README.md          What the lesson covers, and the results
+│       ├── notebook.ipynb     The reasoning, code, and plots — the lesson itself
+│       ├── data/              Dataset (small and redistributable only)
+│       └── figures/           Plots exported for the README
+└── projects/                  End-to-end work, not tied to a single technique
+    └── project-name/          Same shape as a lesson
 ```
 
 Every lesson has the same shape, so anything you learn about reading one lesson
 transfers to all the others.
+
+---
+
+## Projects
+
+Where the lessons each isolate one technique, a project applies several of them
+end to end on messy real data — cleaning, exploration, feature engineering,
+model comparison, tuning, and a working predictor.
+
+| Project | What it does | Result |
+|---|---|---|
+| [Tehran House Price Prediction](projects/tehran-house-price/) | Predicts apartment prices from area, amenities and neighbourhood across 3,243 listings | Test R² **0.41 → 0.84**, average error halved |
 
 ---
 
