@@ -82,9 +82,9 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 02 | [Multiple Linear Regression](lessons/02-multiple-linear-regression/) | ✅ Complete |
 | 03 | [Polynomial Regression](lessons/03-polynomial-regression/) | ✅ Complete |
 | 04 | [Non-Linear Regression](lessons/04-non-linear-regression/) | ✅ Complete |
-| 05 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 06 | Logistic Regression | ⬜ Planned |
-| 07 | k-Nearest Neighbours | ⬜ Planned |
+| 05 | [k-Nearest Neighbours](lessons/05-k-nearest-neighbours/) | ✅ Complete |
+| 06 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 07 | Logistic Regression | ⬜ Planned |
 | 08 | Naive Bayes | ⬜ Planned |
 | 09 | Support Vector Machines | ⬜ Planned |
 | 10 | Decision Trees | ⬜ Planned |
