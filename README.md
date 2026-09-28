@@ -83,11 +83,11 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 03 | [Polynomial Regression](lessons/03-polynomial-regression/) | ✅ Complete |
 | 04 | [Non-Linear Regression](lessons/04-non-linear-regression/) | ✅ Complete |
 | 05 | [k-Nearest Neighbours](lessons/05-k-nearest-neighbours/) | ✅ Complete |
-| 06 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 07 | Logistic Regression | ⬜ Planned |
-| 08 | Naive Bayes | ⬜ Planned |
-| 09 | Support Vector Machines | ⬜ Planned |
-| 10 | Decision Trees | ⬜ Planned |
+| 06 | [Decision Trees](lessons/06-decision-trees/) | ✅ Complete |
+| 07 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 08 | Logistic Regression | ⬜ Planned |
+| 09 | Naive Bayes | ⬜ Planned |
+| 10 | Support Vector Machines | ⬜ Planned |
 | 11 | Ensemble Methods (Random Forest, Gradient Boosting) | ⬜ Planned |
 | 12 | Model Evaluation and Cross-Validation | ⬜ Planned |
 | 13 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |

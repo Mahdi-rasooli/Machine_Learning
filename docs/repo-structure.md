@@ -167,7 +167,7 @@ to contain only my own work.
 Copy the template and rename it:
 
 ```bash
-cp -r lessons/_template lessons/06-regularization
+cp -r lessons/_template lessons/07-regularization
 ```
 
 Fill in the notebook, then condense it into the README. Put the dataset in
