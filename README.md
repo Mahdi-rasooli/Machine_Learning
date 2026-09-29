@@ -84,8 +84,8 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 04 | [Non-Linear Regression](lessons/04-non-linear-regression/) | ✅ Complete |
 | 05 | [k-Nearest Neighbours](lessons/05-k-nearest-neighbours/) | ✅ Complete |
 | 06 | [Decision Trees](lessons/06-decision-trees/) | ✅ Complete |
-| 07 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 08 | Logistic Regression | ⬜ Planned |
+| 07 | [Logistic Regression](lessons/07-logistic-regression/) | ✅ Complete |
+| 08 | Regularization (Ridge, Lasso) | ⬜ Planned |
 | 09 | Naive Bayes | ⬜ Planned |
 | 10 | Support Vector Machines | ⬜ Planned |
 | 11 | Ensemble Methods (Random Forest, Gradient Boosting) | ⬜ Planned |
