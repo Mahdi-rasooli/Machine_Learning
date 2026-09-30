@@ -85,16 +85,17 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 05 | [k-Nearest Neighbours](lessons/05-k-nearest-neighbours/) | ✅ Complete |
 | 06 | [Decision Trees](lessons/06-decision-trees/) | ✅ Complete |
 | 07 | [Logistic Regression](lessons/07-logistic-regression/) | ✅ Complete |
-| 08 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 09 | Naive Bayes | ⬜ Planned |
-| 10 | Support Vector Machines | ⬜ Planned |
-| 11 | Ensemble Methods (Random Forest, Gradient Boosting) | ⬜ Planned |
-| 12 | Model Evaluation and Cross-Validation | ⬜ Planned |
-| 13 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
-| 14 | Clustering (k-Means, Hierarchical, DBSCAN) | ⬜ Planned |
-| 15 | Dimensionality Reduction (PCA) | ⬜ Planned |
-| 16 | Introduction to Neural Networks | ⬜ Planned |
-| 17 | Capstone: an end-to-end project | ⬜ Planned |
+| 08 | [Linear vs Logistic Regression](lessons/08-linear-vs-logistic-regression/) | ✅ Complete |
+| 09 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 10 | Naive Bayes | ⬜ Planned |
+| 11 | Support Vector Machines | ⬜ Planned |
+| 12 | Ensemble Methods (Random Forest, Gradient Boosting) | ⬜ Planned |
+| 13 | Model Evaluation and Cross-Validation | ⬜ Planned |
+| 14 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
+| 15 | Clustering (k-Means, Hierarchical, DBSCAN) | ⬜ Planned |
+| 16 | Dimensionality Reduction (PCA) | ⬜ Planned |
+| 17 | Introduction to Neural Networks | ⬜ Planned |
+| 18 | Capstone: an end-to-end project | ⬜ Planned |
 
 Legend: ✅ Complete · 🚧 In progress · ⬜ Planned
 
