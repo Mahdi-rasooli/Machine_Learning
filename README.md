@@ -87,10 +87,10 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 07 | [Logistic Regression](lessons/07-logistic-regression/) | ✅ Complete |
 | 08 | [Linear vs Logistic Regression](lessons/08-linear-vs-logistic-regression/) | ✅ Complete |
 | 09 | [Random Forest](lessons/09-random-forest/) | ✅ Complete |
-| 10 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 11 | Naive Bayes | ⬜ Planned |
-| 12 | Support Vector Machines | ⬜ Planned |
-| 13 | Gradient Boosting | ⬜ Planned |
+| 10 | [XGBoost](lessons/10-xgboost/) | ✅ Complete |
+| 11 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 12 | Naive Bayes | ⬜ Planned |
+| 13 | Support Vector Machines | ⬜ Planned |
 | 14 | Model Evaluation and Cross-Validation | ⬜ Planned |
 | 15 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
 | 16 | Clustering (k-Means, Hierarchical, DBSCAN) | ⬜ Planned |
@@ -152,7 +152,7 @@ The reasoning behind each of these is documented in
 ## Tech stack
 
 `Python` · `NumPy` · `pandas` · `Matplotlib` · `seaborn` · `scikit-learn` ·
-`SciPy` · `Jupyter`
+`SciPy` · `XGBoost` · `Jupyter`
 
 ---
 

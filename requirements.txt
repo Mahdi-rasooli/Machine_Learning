@@ -10,6 +10,9 @@ scikit-learn>=1.4
 # Non-linear curve fitting (lesson 04)
 scipy>=1.11
 
+# Gradient boosting (lesson 10)
+xgboost>=2.0
+
 # Notebooks
 jupyter>=1.0
 notebook>=7.0
