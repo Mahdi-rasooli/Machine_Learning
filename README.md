@@ -68,6 +68,7 @@ model comparison, tuning, and a working predictor.
 | Project | What it does | Result |
 |---|---|---|
 | [Tehran House Price Prediction](projects/tehran-house-price/) | Predicts apartment prices from area, amenities and neighbourhood across 3,243 listings | Test R² **0.41 → 0.84**, average error halved |
+| [Heart Attack Prediction](projects/heart-attack-prediction/) | Classifies 302 patients from 13 clinical measurements, comparing KNN, logistic regression, a decision tree and SVMs | Test accuracy **0.84** against a 0.54 baseline |
 
 ---
 
