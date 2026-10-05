@@ -89,9 +89,9 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 08 | [Linear vs Logistic Regression](lessons/08-linear-vs-logistic-regression/) | ✅ Complete |
 | 09 | [Random Forest](lessons/09-random-forest/) | ✅ Complete |
 | 10 | [XGBoost](lessons/10-xgboost/) | ✅ Complete |
-| 11 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 12 | Naive Bayes | ⬜ Planned |
-| 13 | Support Vector Machines | ⬜ Planned |
+| 11 | [Support Vector Machines](lessons/11-support-vector-machines/) | ✅ Complete |
+| 12 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 13 | Naive Bayes | ⬜ Planned |
 | 14 | Model Evaluation and Cross-Validation | ⬜ Planned |
 | 15 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
 | 16 | Clustering (k-Means, Hierarchical, DBSCAN) | ⬜ Planned |
