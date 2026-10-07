@@ -90,14 +90,15 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 09 | [Random Forest](lessons/09-random-forest/) | ✅ Complete |
 | 10 | [XGBoost](lessons/10-xgboost/) | ✅ Complete |
 | 11 | [Support Vector Machines](lessons/11-support-vector-machines/) | ✅ Complete |
-| 12 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 13 | Naive Bayes | ⬜ Planned |
-| 14 | Model Evaluation and Cross-Validation | ⬜ Planned |
-| 15 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
-| 16 | Clustering (k-Means, Hierarchical, DBSCAN) | ⬜ Planned |
-| 17 | Dimensionality Reduction (PCA) | ⬜ Planned |
-| 18 | Introduction to Neural Networks | ⬜ Planned |
-| 19 | Capstone: an end-to-end project | ⬜ Planned |
+| 12 | [K-Means Clustering](lessons/12-k-means-clustering/) | ✅ Complete |
+| 13 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 14 | Naive Bayes | ⬜ Planned |
+| 15 | Model Evaluation and Cross-Validation | ⬜ Planned |
+| 16 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
+| 17 | Hierarchical Clustering and DBSCAN | ⬜ Planned |
+| 18 | Dimensionality Reduction (PCA) | ⬜ Planned |
+| 19 | Introduction to Neural Networks | ⬜ Planned |
+| 20 | Capstone: an end-to-end project | ⬜ Planned |
 
 Legend: ✅ Complete · 🚧 In progress · ⬜ Planned
 
