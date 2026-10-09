@@ -17,7 +17,8 @@ This lesson covers core, border and noise points, density-reachability, how to
 choose $\varepsilon$ with a k-distance plot, and why geographic coordinates need
 the haversine distance. It compares DBSCAN with k-means on data each one suits,
 then clusters 1,189 Canadian weather stations — by location, and by location and
-temperature together.
+temperature together. It ends with a short look at **HDBSCAN**, the modern
+successor that removes DBSCAN's main limitation.
 
 ---
 
@@ -151,6 +152,41 @@ standard deviations has no physical meaning to check it against; small changes
 to it change the result sharply, so this is one reasonable view of the data
 rather than the answer.
 
+### Beyond DBSCAN: HDBSCAN
+
+DBSCAN's weakness on this data is its single $\varepsilon$: the southern
+networks have stations tens of kilometres apart, the north hundreds. **HDBSCAN**
+(in scikit-learn since 1.3) runs DBSCAN at every $\varepsilon$ at once, using a
+*mutual reachability distance*
+$\max\big(\text{core}(a), \text{core}(b), d(a, b)\big)$ that pushes sparse points
+apart, and keeps the clusters that stay stable across the widest range of
+densities. Its main setting is `min_cluster_size`, which is far easier to choose
+than $\varepsilon$.
+
+![Weather stations clustered with HDBSCAN](figures/hdbscan.png)
+
+| | DBSCAN (eps = 100 km) | HDBSCAN (min_cluster_size = 15) |
+|---|---|---|
+| Clusters | 8 | 14 |
+| Noise stations | 347 | 357 |
+| Newfoundland stations clustered (of 58) | 0 | 41 |
+| Stations north of 55° clustered (of 135) | 23 | 50 |
+
+- **Different densities in one run.** The BC coast cluster has stations a median
+  39 km apart (to the 10th-nearest station); the Yukon–Northwest Territories
+  cluster, 277 km — seven times sparser.
+- **Chains broken.** DBSCAN's Pacific-to-prairies chain separates into the BC
+  coast, the southern BC interior and Alberta; the Quebec–Ontario corridor into
+  southern Ontario, the Montreal region and the Saguenay region.
+- **Not simply more clustering.** HDBSCAN also drops the thin fringes of dense
+  regions into noise, so the total noise is about the same — what changes is
+  *which* stations are noise.
+
+**DBSCAN** remains the right tool when a meaningful radius exists and density is
+roughly uniform. **HDBSCAN** is the usual default when densities vary or no
+radius can be justified — which is why modern pipelines that cluster text and
+image embeddings use it.
+
 ---
 
 ## Changes from the original lab
@@ -169,7 +205,7 @@ fixes them:
 | `np.nan_to_num`, turning a missing temperature into 0 °C | Rows with missing values dropped |
 | `eps` chosen without justification | A k-distance plot to choose it |
 | Border points labelled "outliers" | Core, border and noise points counted and drawn separately |
-| The `jet` colour map, which distorts how different colours look | `tab10`, a palette designed for categories, with its grey removed so no cluster looks like noise |
+| The `jet` colour map, which distorts how different colours look | `tab20`, a palette designed for categories, with its greys removed so no cluster looks like noise |
 
 The weather data file also had old Mac-style line endings; it was converted to
 standard ones with no change to its contents.
@@ -180,8 +216,8 @@ standard ones with no change to its contents.
 
 - **One $\varepsilon$ for all densities.** DBSCAN assumes clusters have similar
   density. Dense southern networks and sparse northern ones cannot both be
-  clustered well with a single radius; HDBSCAN, which varies the radius, is the
-  usual answer.
+  clustered well with a single radius — the reason for the HDBSCAN section
+  above.
 - **Mixed units.** The 5-D clustering treats standardised degrees and
   temperatures as one space, which is a convenience, not a physical truth.
 - **No ground truth.** As with the other clustering lessons, the check is whether
@@ -201,5 +237,8 @@ standard ones with no change to its contents.
 - Schubert, E., Sander, J., Ester, M., Kriegel, H.-P. and Xu, X. (2017).
   *DBSCAN Revisited, Revisited: Why and How You Should (Still) Use DBSCAN*.
   ACM Transactions on Database Systems 42(3).
+- Campello, R. J. G. B., Moulavi, D. and Sander, J. (2013). *Density-Based
+  Clustering Based on Hierarchical Density Estimates*. PAKDD 2013, 160–172.
 - [scikit-learn: DBSCAN](https://scikit-learn.org/stable/modules/clustering.html#dbscan)
+- [scikit-learn: HDBSCAN](https://scikit-learn.org/stable/modules/clustering.html#hdbscan)
 - [Cartopy documentation](https://scitools.org.uk/cartopy/docs/latest/)
