@@ -92,11 +92,11 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 11 | [Support Vector Machines](lessons/11-support-vector-machines/) | ✅ Complete |
 | 12 | [K-Means Clustering](lessons/12-k-means-clustering/) | ✅ Complete |
 | 13 | [Hierarchical Clustering](lessons/13-hierarchical-clustering/) | ✅ Complete |
-| 14 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 15 | Naive Bayes | ⬜ Planned |
-| 16 | Model Evaluation and Cross-Validation | ⬜ Planned |
-| 17 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
-| 18 | DBSCAN | ⬜ Planned |
+| 14 | [DBSCAN](lessons/14-dbscan/) | ✅ Complete |
+| 15 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 16 | Naive Bayes | ⬜ Planned |
+| 17 | Model Evaluation and Cross-Validation | ⬜ Planned |
+| 18 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
 | 19 | Dimensionality Reduction (PCA) | ⬜ Planned |
 | 20 | Introduction to Neural Networks | ⬜ Planned |
 | 21 | Capstone: an end-to-end project | ⬜ Planned |
@@ -155,7 +155,7 @@ The reasoning behind each of these is documented in
 ## Tech stack
 
 `Python` · `NumPy` · `pandas` · `Matplotlib` · `seaborn` · `scikit-learn` ·
-`SciPy` · `XGBoost` · `Jupyter`
+`SciPy` · `XGBoost` · `Cartopy` · `Jupyter`
 
 ---
 

@@ -13,6 +13,9 @@ scipy>=1.11
 # Gradient boosting (lesson 10)
 xgboost>=2.0
 
+# Maps (lesson 14)
+cartopy>=0.22
+
 # Notebooks
 jupyter>=1.0
 notebook>=7.0
