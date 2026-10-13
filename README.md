@@ -95,13 +95,14 @@ nothing is marked complete until both the notebook and the write-up are finished
 | 13 | [Hierarchical Clustering](lessons/13-hierarchical-clustering/) | ✅ Complete |
 | 14 | [DBSCAN](lessons/14-dbscan/) | ✅ Complete |
 | 15 | [Content-Based Recommender Systems](lessons/15-content-based-recommender/) | ✅ Complete |
-| 16 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 17 | Naive Bayes | ⬜ Planned |
-| 18 | Model Evaluation and Cross-Validation | ⬜ Planned |
-| 19 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
-| 20 | Dimensionality Reduction (PCA) | ⬜ Planned |
-| 21 | Introduction to Neural Networks | ⬜ Planned |
-| 22 | Capstone: an end-to-end project | ⬜ Planned |
+| 16 | [Collaborative Filtering](lessons/16-collaborative-filtering/) | ✅ Complete |
+| 17 | Regularization (Ridge, Lasso) | ⬜ Planned |
+| 18 | Naive Bayes | ⬜ Planned |
+| 19 | Model Evaluation and Cross-Validation | ⬜ Planned |
+| 20 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
+| 21 | Dimensionality Reduction (PCA) | ⬜ Planned |
+| 22 | Introduction to Neural Networks | ⬜ Planned |
+| 23 | Capstone: an end-to-end project | ⬜ Planned |
 
 Legend: ✅ Complete · 🚧 In progress · ⬜ Planned
 
