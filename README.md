@@ -70,6 +70,7 @@ model comparison, tuning, and a working predictor.
 | [Tehran House Price Prediction](projects/tehran-house-price/) | Predicts apartment prices from area, amenities and neighbourhood across 3,243 listings | Test R² **0.41 → 0.84**, average error halved |
 | [Heart Attack Prediction](projects/heart-attack-prediction/) | Classifies 302 patients from 13 clinical measurements, comparing KNN, logistic regression, a decision tree and SVMs | Test accuracy **0.84** against a 0.54 baseline |
 | [Mall Customer Segmentation](projects/mall-customer-segmentation/) | Groups 200 shoppers by income and spending, comparing k-means, hierarchical clustering and DBSCAN | **5 segments**, silhouette **0.55**, k-means and hierarchical agreeing on 196 of 200 customers |
+| [Movie Recommender System](projects/movie-recommender/) | Recommends movies from 3.9 million MovieLens ratings, comparing content-based and collaborative filtering for the same user | The two top-10 lists share **no movies**: genre matches against what similar viewers loved |
 
 ---
 
