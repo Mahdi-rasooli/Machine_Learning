@@ -76,8 +76,11 @@ Using deviations rather than raw ratings means a 4 from a generous rater and a
 | **Ratings** | 3,899,999 ratings (0.5–5 stars) from 42,130 users on 23,648 movies |
 | **Movies** | 34,208 titles; genres are dropped, since collaborative filtering does not use them |
 
-The ratings are stored gzip-compressed (26 MB instead of 102 MB, which is over
-GitHub's file limit); pandas reads the compressed file directly.
+The files are not stored again here: the notebook reads them from
+[lesson 15's `data/` folder](../15-content-based-recommender/data/), so the
+26 MB ratings file exists once in the repository. It is gzip-compressed
+(26 MB instead of 102 MB, which is over GitHub's file limit), and pandas reads
+the compressed file directly.
 
 ---
 
@@ -182,8 +185,9 @@ and handle sparsity and scale far better than comparing users directly.
 
 The notebook arrived already modernised. For this repository:
 
-- **Relative data paths** — `Path("data")` replacing a path that existed only on
-  one machine, and the compressed ratings file.
+- **Shared data** — the notebook reads lesson 15's files through a relative
+  path, replacing a path that existed only on one machine, instead of keeping a
+  second copy of them.
 - **A stable sort** for ranking users by shared movies. 244 users tie at five
   shared movies, and an unstable sort listed different users on different runs;
   `kind='stable'` keeps tied users in id order. This changed only a displayed

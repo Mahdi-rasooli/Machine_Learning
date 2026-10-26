@@ -23,10 +23,13 @@ design decision made fifteen separate times.
 Lessons are numbered with a two-digit prefix (`01-`, `02-`) so that directory
 listings stay in course order rather than alphabetical order.
 
-**Lessons never depend on one another.** If lesson 09 needs a decision tree, it
-implements one or imports scikit-learn's — it does not reach into lesson 08.
-Self-contained lessons can be read and run in isolation, which is how anyone
-evaluating this repository will actually encounter them.
+**Lessons stand on their own.** When a lesson builds on an earlier technique —
+the random forest on the decision tree, for instance — it uses scikit-learn's
+version or builds what it needs itself; it never imports code from another
+lesson's folder. Self-contained lessons can be read and run in isolation, which
+is how anyone evaluating this repository will actually encounter them.
+
+The one deliberate exception is data, described under *Data policy* below.
 
 ---
 
@@ -97,13 +100,23 @@ Practically: never run "Clear All Outputs" before committing.
 
 ## Data policy
 
-Small, redistributable datasets are committed under `lessons/NN-*/data/` so each
-lesson runs immediately after cloning.
+Datasets are committed under each lesson's or project's `data/` folder, so
+everything runs immediately after cloning. Each README states where its data
+comes from and credits it.
 
-Anything large, or restrictively licensed, is not committed. Those lessons state
-in their README where the data comes from and how to obtain it, and the file is
-listed in `.gitignore`. A reader must never be blocked by a missing file with no
-explanation of where it came from.
+Two rules keep the repository small:
+
+- **Nothing over GitHub's 100 MB file limit.** The MovieLens ratings file is
+  102 MB as a CSV, so it is committed gzip-compressed (`.csv.gz`, 26 MB); pandas
+  reads compressed CSV files directly, so no code has to change.
+- **A large dataset is stored once.** Lessons 15 and 16 and the movie
+  recommender project all use the same MovieLens files. They live in lesson 15's
+  `data/` folder, and the other two read them through a relative path instead of
+  keeping copies. Small datasets — a few kilobytes — are simply copied, so that
+  each lesson keeps its own.
+
+Anything restrictively licensed is not committed at all. A reader must never be
+blocked by a missing file with no explanation of where it came from.
 
 ---
 
@@ -162,17 +175,17 @@ to contain only my own work.
 
 ---
 
-## Starting a new lesson
+## Adding a new lesson
 
-Copy the template and rename it:
-
-```bash
-cp -r lessons/_template lessons/09-regularization
-```
-
-Fill in the notebook, then condense it into the README. Put the dataset in
-`data/`, and make sure the final plot is saved into `figures/` so the README can
-display it.
-
-Finally, update the roadmap table in the root `README.md` — the roadmap is only
-useful while it is accurate.
+1. Create `lessons/NN-lesson-name/` with the next free number, in the shape
+   shown at the top of this document.
+2. Write the notebook in the standard order — the problem, the intuition, the
+   mathematics, the data, the model, the results, the references — and make
+   sure its final plot is saved into `figures/` so the README can display it.
+3. Execute it from top to bottom before committing, so every committed output
+   comes from one clean run.
+4. Condense it into the README, using any existing lesson as the model:
+   *What this lesson covers*, *Intuition*, *The mathematics*, *The dataset*,
+   *What the code does*, *Results*, *References*.
+5. Add the lesson to the right group of the roadmap in the root `README.md` —
+   the roadmap is only useful while it is accurate.

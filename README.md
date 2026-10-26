@@ -1,13 +1,10 @@
 # Machine Learning — A Course, Worked Through
 
-A working notebook of my machine learning education. For every topic I study, I
-write up the mathematics behind it, apply it to a real dataset, and measure how
-well it does on data it has never seen.
-
-This repository is built in public, lesson by lesson, as I progress through my
-course. Each lesson states the mathematics in my own words, applies it to real
-data, and reports what the model can and cannot do — including the experiments
-that did not improve anything.
+A machine learning portfolio: **16 lessons** across supervised learning,
+unsupervised learning and recommender systems, and **4 end-to-end projects**.
+For every topic the mathematics is written out, applied to a real dataset, and
+measured on data the model has never seen — and every result is interpreted,
+including where the model fails.
 
 ---
 
@@ -34,36 +31,11 @@ failure implies.
 
 ---
 
-## Repository structure
-
-```
-Machine_Learning/
-├── README.md                  You are here
-├── LICENSE
-├── requirements.txt
-├── docs/
-│   └── repo-structure.md      Conventions and the reasoning behind them
-├── lessons/
-│   ├── _template/             Starting point for every new lesson
-│   └── NN-lesson-name/
-│       ├── README.md          What the lesson covers, and the results
-│       ├── notebook.ipynb     The reasoning, code, and plots — the lesson itself
-│       ├── data/              Dataset (small and redistributable only)
-│       └── figures/           Plots exported for the README
-└── projects/                  End-to-end work, not tied to a single technique
-    └── project-name/          Same shape as a lesson
-```
-
-Every lesson has the same shape, so anything you learn about reading one lesson
-transfers to all the others.
-
----
-
 ## Projects
 
 Where the lessons each isolate one technique, a project applies several of them
-end to end on messy real data — cleaning, exploration, feature engineering,
-model comparison, tuning, and a working predictor.
+end to end on real data — cleaning, exploration, feature engineering, model
+comparison, tuning, and a working result.
 
 | Project | What it does | Result |
 |---|---|---|
@@ -76,43 +48,103 @@ model comparison, tuning, and a working predictor.
 
 ## Roadmap
 
-Lessons are added as I complete them in the course. The status column is honest:
-nothing is marked complete until both the notebook and the write-up are finished.
+The lessons, grouped by area. Lesson numbers record the order in which the
+lessons were completed, so within the groups below they are not always
+consecutive.
 
-| # | Lesson | Status |
+### 1. Supervised learning
+
+Learning from examples that come with the right answer.
+
+**Regression** — predicting a number
+
+| # | Lesson | What it covers |
 |---|---|---|
-| 01 | [Simple Linear Regression](lessons/01-simple-linear-regression/) | ✅ Complete |
-| 02 | [Multiple Linear Regression](lessons/02-multiple-linear-regression/) | ✅ Complete |
-| 03 | [Polynomial Regression](lessons/03-polynomial-regression/) | ✅ Complete |
-| 04 | [Non-Linear Regression](lessons/04-non-linear-regression/) | ✅ Complete |
-| 05 | [k-Nearest Neighbours](lessons/05-k-nearest-neighbours/) | ✅ Complete |
-| 06 | [Decision Trees](lessons/06-decision-trees/) | ✅ Complete |
-| 07 | [Logistic Regression](lessons/07-logistic-regression/) | ✅ Complete |
-| 08 | [Linear vs Logistic Regression](lessons/08-linear-vs-logistic-regression/) | ✅ Complete |
-| 09 | [Random Forest](lessons/09-random-forest/) | ✅ Complete |
-| 10 | [XGBoost](lessons/10-xgboost/) | ✅ Complete |
-| 11 | [Support Vector Machines](lessons/11-support-vector-machines/) | ✅ Complete |
-| 12 | [K-Means Clustering](lessons/12-k-means-clustering/) | ✅ Complete |
-| 13 | [Hierarchical Clustering](lessons/13-hierarchical-clustering/) | ✅ Complete |
-| 14 | [DBSCAN](lessons/14-dbscan/) | ✅ Complete |
-| 15 | [Content-Based Recommender Systems](lessons/15-content-based-recommender/) | ✅ Complete |
-| 16 | [Collaborative Filtering](lessons/16-collaborative-filtering/) | ✅ Complete |
-| 17 | Regularization (Ridge, Lasso) | ⬜ Planned |
-| 18 | Naive Bayes | ⬜ Planned |
-| 19 | Model Evaluation and Cross-Validation | ⬜ Planned |
-| 20 | Feature Engineering and Preprocessing Pipelines | ⬜ Planned |
-| 21 | Dimensionality Reduction (PCA) | ⬜ Planned |
-| 22 | Introduction to Neural Networks | ⬜ Planned |
-| 23 | Capstone: an end-to-end project | ⬜ Planned |
+| 01 | [Simple Linear Regression](lessons/01-simple-linear-regression/) | Fitting a straight line through data to predict a continuous value |
+| 02 | [Multiple Linear Regression](lessons/02-multiple-linear-regression/) | Several input features at once — fitting a plane instead of a line |
+| 03 | [Polynomial Regression](lessons/03-polynomial-regression/) | Fitting a curve while still using linear regression to do it |
+| 04 | [Non-Linear Regression](lessons/04-non-linear-regression/) | A model whose shape is chosen in advance, when no line or polynomial will do |
 
-Legend: ✅ Complete · 🚧 In progress · ⬜ Planned
+**Classification** — predicting a category
+
+| # | Lesson | What it covers |
+|---|---|---|
+| 05 | [k-Nearest Neighbours](lessons/05-k-nearest-neighbours/) | Classifying a new case by letting the most similar known cases vote |
+| 06 | [Decision Trees](lessons/06-decision-trees/) | A short sequence of yes/no questions, each chosen to leave the groups as pure as possible |
+| 07 | [Logistic Regression](lessons/07-logistic-regression/) | Predicting the probability of a yes/no outcome, learned by gradient descent |
+| 08 | [Linear vs Logistic Regression](lessons/08-linear-vs-logistic-regression/) | The same weighted sum asked two different questions — and how to choose |
+| 11 | [Support Vector Machines](lessons/11-support-vector-machines/) | The widest possible gap between classes, bent with a kernel when a straight one will not do |
+
+**Ensemble methods** — combining many models into a stronger one
+
+| # | Lesson | What it covers |
+|---|---|---|
+| 09 | [Random Forest](lessons/09-random-forest/) | Many deliberately different trees voting together, and beating any one of them |
+| 10 | [XGBoost](lessons/10-xgboost/) | Hundreds of weak trees built in sequence, each correcting the mistakes of the last |
+
+Applied in: [Tehran House Price Prediction](projects/tehran-house-price/) ·
+[Heart Attack Prediction](projects/heart-attack-prediction/)
+
+### 2. Unsupervised learning
+
+Finding structure in data that has no answers attached.
+
+**Clustering**
+
+| # | Lesson | What it covers |
+|---|---|---|
+| 12 | [K-Means Clustering](lessons/12-k-means-clustering/) | Grouping unlabelled data around centroids — and checking what the groups really mean |
+| 13 | [Hierarchical Clustering](lessons/13-hierarchical-clustering/) | A whole family tree of groups, cut afterwards at the level that fits the question |
+| 14 | [DBSCAN](lessons/14-dbscan/) | Clusters as dense regions of any shape, with an honest label for points that belong nowhere; ends with HDBSCAN |
+
+Applied in: [Mall Customer Segmentation](projects/mall-customer-segmentation/)
+
+### 3. Recommender systems
+
+Predicting what a user will like next.
+
+| # | Lesson | What it covers |
+|---|---|---|
+| 15 | [Content-Based Filtering](lessons/15-content-based-recommender/) | Learning what a user likes about the movies they rated, and recommending more with those qualities |
+| 16 | [Collaborative Filtering](lessons/16-collaborative-filtering/) | Recommending what people with similar taste enjoyed, without looking at the movies themselves |
+
+Applied in: [Movie Recommender System](projects/movie-recommender/)
+
+### Next
+
+Regularization (Ridge and Lasso), Naive Bayes, model evaluation and
+cross-validation, dimensionality reduction (PCA), and an introduction to neural
+networks.
+
+---
+
+## Repository structure
+
+```
+Machine_Learning/
+├── README.md                  You are here
+├── LICENSE
+├── requirements.txt
+├── docs/
+│   └── repo-structure.md      Conventions and the reasoning behind them
+├── lessons/                   16 lessons, one technique each
+│   └── NN-lesson-name/
+│       ├── README.md          Summary: the mathematics, the data, the results
+│       ├── notebook.ipynb     The full working — reasoning, code and plots
+│       ├── data/              The dataset
+│       └── figures/           Plots shown in the README
+└── projects/                  4 end-to-end projects, in the same shape
+```
+
+Every lesson and project has the same shape, so anything learned about reading
+one transfers to all the others.
 
 ---
 
 ## Running the code
 
 ```bash
-git clone https://github.com/USERNAME/Machine_Learning.git
+git clone https://github.com/Mahdi-rasooli/Machine_Learning.git
 cd Machine_Learning
 
 python -m venv .venv
@@ -146,10 +178,14 @@ its outputs intact.
   never on the rows it was fitted to. Where it does not — a short time series,
   for instance — the lesson says so and explains why.
 - **Every result is interpreted**, including where the model fails.
-- **Randomness is seeded**, so the numbers in the write-up are the numbers you
-  get when you run it.
-- **Each lesson is self-contained.** No lesson depends on another.
+- **Randomness is seeded**, so the numbers in the write-ups are the numbers you
+  get when you run the notebooks.
+- **Each lesson stands on its own** and can be read and run without the others.
+  The one shared resource is the MovieLens data, stored once in lesson 15 and
+  read from there by lesson 16 and the movie recommender project.
 - **Mathematics is written out**, not linked away to a video.
+- **Sources are credited** — the course, the datasets and the papers behind
+  each method.
 
 The reasoning behind each of these is documented in
 [docs/repo-structure.md](docs/repo-structure.md).
@@ -159,19 +195,21 @@ The reasoning behind each of these is documented in
 ## Tech stack
 
 `Python` · `NumPy` · `pandas` · `Matplotlib` · `seaborn` · `scikit-learn` ·
-`SciPy` · `XGBoost` · `Cartopy` · `Jupyter`
+`XGBoost` · `Cartopy` · `Jupyter`
 
 ---
 
 ## About
 
-I am studying machine learning and documenting the entire process here, in the
-open, including the parts I found difficult.
+This repository is my machine learning portfolio. The lessons follow the topics
+of the *Machine Learning with Python* course by Jadi, which is credited in each
+lesson; the four projects apply those methods end to end to problems of their
+own, from Tehran house prices to movie recommendations.
 
-**Mahdi Rasooli**
+Every notebook runs from top to bottom with seeded randomness, and every number
+quoted in a README comes from those runs.
 
-- **GitHub:** [@USERNAME](https://github.com/USERNAME)
-- **LinkedIn:** [Mahdi Rasooli](https://linkedin.com/in/USERNAME)
+**Mahdi Rasooli** · [GitHub @Mahdi-rasooli](https://github.com/Mahdi-rasooli)
 
 ---
 
