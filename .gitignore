@@ -41,8 +41,9 @@ Thumbs.db
 desktop.ini
 
 # ---- Data ----
-# Small, redistributable datasets ARE committed under lessons/*/data/.
-# Anything large or license-restricted must be fetched by a download script.
+# Datasets ARE committed under each lesson's or project's data/ folder.
+# Nothing over GitHub's 100 MB limit: large CSVs are committed gzip-compressed
+# (.csv.gz), and a large dataset is stored once and shared, not copied.
 *.zip
 *.tar.gz
 *.7z

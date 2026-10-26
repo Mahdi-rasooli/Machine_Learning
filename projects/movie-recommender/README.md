@@ -36,7 +36,7 @@ ten Action–Sci-Fi–Thrillers; the other returns *Fight Club*, *Léon*,
 **The data is not stored again here.** These are exactly the same two files as
 lessons 15 and 16, so the notebook reads them from
 [`lessons/15-content-based-recommender/data/`](../../lessons/15-content-based-recommender/data/)
-instead of keeping a third 28 MB copy. Run the notebook from this folder and the
+instead of keeping another 28 MB copy — the files exist only once in the repository. Run the notebook from this folder and the
 relative path resolves on its own.
 
 ### What exploration showed
